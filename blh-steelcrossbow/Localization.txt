@@ -1,0 +1,2 @@
+gunSteelCrossbow,items,mod,new,"Steel Crossbow"
+steelCrossbowDesc,items,mod,new,"This crossbow deals more damage, has further range and improved durability than a normal wooden crossbow.\nRequires Yeah Science Tier 4."

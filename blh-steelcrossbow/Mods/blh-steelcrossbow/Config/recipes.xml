@@ -1,0 +1,12 @@
+<configs>
+<append xpath="/recipes">
+
+<recipe name="gunSteelCrossbow" count="1" craft_area="workbench" tags="learnable">
+	<ingredient name="resourceForgedSteel" count="20"/>
+	<ingredient name="resourceLeather" count="4"/>
+	<ingredient name="resourceMechanicalParts" count="10"/>
+	<ingredient name="resourceDuctTape" count="10"/>
+	<ingredient name="gunCompoundBow" count="1"/>
+</recipe>
+</append>
+</configs>

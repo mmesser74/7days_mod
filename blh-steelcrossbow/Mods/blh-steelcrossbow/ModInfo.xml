@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <ModInfo>
+        <Name value="Steel Crossbow Mod" />
+        <Description value="This modlet adds a steel Crossbow" />
+        <Version value="1.0.0" />
+    </ModInfo>
+</xml>
