@@ -1,0 +1,5 @@
+To install Mod:
+
+Copy blh-zombieland-server folder to <7 Days To Die installation folder>\Mods
+Copy Localization.txt to <7 Days To Die installation folder>\Data\Config
+Copy NewGuns.unity3d to <7 Days To Die installation folder>\Data\Bundles

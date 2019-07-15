@@ -1,0 +1,10 @@
+<configs>
+<append xpath="/lootcontainers/lootgroup[@name='commonBooks']">
+	<item name="bookKnowledge"/>
+	<item name="bookArchery"/>
+</append>
+<append xpath="/lootcontainers/lootgroup[@name='rareBooks']">
+	<item name="bookArchery"/>
+	<item name="bookKnowledge"/>
+</append>
+</configs>

@@ -1,0 +1,71 @@
+<configs>
+<append xpath="/progression/attributes">
+	<attribute name="attKnowledge" name_key="attKnowledgeName" desc_key="attKnowledgeDesc" icon="ui_game_symbol_book" min_level="0" max_level="10" base_skill_point_cost="0">
+		<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="4"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="5"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="6"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="7"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="8"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="9"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+		<level_requirements level="10"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqKnowledgeBook1"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="attKnowledgeRank1Desc"/>
+				<effect_description level="2" desc_key="attKnowledgeRank2Desc"/>
+				<effect_description level="3" desc_key="attKnowledgeRank3Desc"/>
+				<effect_description level="4" desc_key="attKnowledgeRank4Desc"/>
+				<effect_description level="5" desc_key="attKnowledgeRank5Desc"/>
+				<effect_description level="6" desc_key="attKnowledgeRank6Desc"/>
+				<effect_description level="7" desc_key="attKnowledgeRank7Desc"/>
+				<effect_description level="8" desc_key="attKnowledgeRank8Desc"/>
+				<effect_description level="9" desc_key="attKnowledgeRank9Desc"/>
+				<effect_description level="10" desc_key="attKnowledgeRank10Desc"/>
+			</effect_group>
+</attribute>
+</append>
+<append xpath="/progression/skills">
+	<skill name="skillTextbook" parent="attKnowledge" name_key="skillTextbookName" desc_key="skillTextbookDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+    <skill name="skillRobinHood" parent="attKnowledge" name_key="skillRobinHoodName" desc_key="skillRobinHoodDesc" icon="ui_game_symbol_archery"><effec_group/></skill>
+</append>
+
+<append xpath="/progression/perks">
+	<perk name="perkRobinHood" parent="skillRobinHood" name_key="perkRobinHoodName" min_level="0" max_level="5" base_skill_point_cost="0" desc_key="perkRobinHoodDesc" icon="ui_game_symbol_archery">
+		<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attKnowledge" operation="GTE" value="2" desc_key="reqPerceptionLevel2"/></level_requirements>
+		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attKnowledge" operation="GTE" value="4" desc_key="reqPerceptionLevel4"/></level_requirements>
+		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attKnowledge" operation="GTE" value="6" desc_key="reqPerceptionLevel6"/></level_requirements>
+		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attKnowledge" operation="GTE" value="8" desc_key="reqPerceptionLevel8"/></level_requirements>
+		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attKnowledge" operation="GTE" value="10" desc_key="reqPerceptionLevel10"/></level_requirements>
+		
+		<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,2,3,4,5"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,3,4,5"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,4,5"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5"/>
+				<effect_description level="1" desc_key="perkRobinHoodRank1Desc"/>
+				<effect_description level="2" desc_key="perkRobinHoodRank2Desc"/>
+				<effect_description level="3" desc_key="perkRobinHoodRank3Desc"/>
+				<effect_description level="4" desc_key="perkRobinHoodRank4Desc"/>
+				<effect_description level="5" desc_key="perkRobinHoodRank5Desc"/>
+		</effect_group>
+			
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="bow"/>
+			<triggered_effect trigger="onSelfKilledOther" action="AddBuff" target="self" buff="buffPerkRobinHoodKillStreak">
+				<requirement name="ProgressionLevel" progression_name="perkRobinHood" operation="GTE" value="1"/>
+				<requirement name="CVarCompare" cvar="KillStreakTargetCounter" target="other" operation="Equals" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfKilledOther" action="RemoveBuff" target="self" buff="buffPerkKillStreakCleanup">
+				<requirement name="CVarCompare" cvar="KillStreakTargetCounter" target="other" operation="Equals" value="1"/>
+			</triggered_effect>
+		</effect_group>
+	</perk>
+</append>
+<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']">
+	<effect_group>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="gunSteelCrossbow"/>
+	</effect_group>
+</append>
+</configs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <ModInfo>
+        <Name value="Zombieland Server Mod" />
+        <Description value="A17 modlet for Zombieland Server" />
+		<Author value="BadLeftHip" />
+		<Version value="1.0.0" />
+    </ModInfo>
+</xml>
